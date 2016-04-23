@@ -4,7 +4,8 @@ FROM mikewright/nodejs-dev:latest
 RUN npm install -g elm elm-test elm-oracle 
 
 # Install elm-format (alpha right now)
-RUN curl -sSL https://github.com/avh4/elm-format/releases/download/0.2.0-alpha/elm-format-0.2.0-alpha-linux-x64.tgz | tar -xvz  && \
+RUN cd $HOME && \
+    curl -sSL https://github.com/avh4/elm-format/releases/download/0.2.0-alpha/elm-format-0.2.0-alpha-linux-x64.tgz | tar -xvz  && \
     sudo mv elm-format /usr/bin
 
 # Set environment to use UTF-8
